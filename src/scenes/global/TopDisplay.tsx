@@ -3,7 +3,6 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { useContext, useEffect, useState } from "react";
 import { ColorModeContext, tokens } from "../../theme";
-import { useTopBarContext } from "../../context/TopBarContext";
 import { useComponentsContext } from "../../context/ComponentsContext";
 import { ModelCache } from "../../bim-components/modelCache";
 // import { UploadIfcButton } from "../../components/UploadIfcButton";
@@ -14,8 +13,7 @@ export const TopDisplay = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const components = useComponentsContext();
-  const { toggleAssemblyBrowserPanel } = useTopBarContext();
-  const [modelLoaded, setModelLoaded] = useState(false);
+  const [modelLoaded , setModelLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     // add load listener

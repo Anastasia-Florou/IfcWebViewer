@@ -90,7 +90,7 @@ export const ThreeScene = () => {
   }, [components]);
 
   const createWorld = (components: OBC.Components): OBC.World | undefined => {
-    const modelCache = components.get(ModelCache);
+    const modelCache  = components.get(ModelCache);
 
     const newWorld = SetUpWorld(components, mountRef.current, "Main");
     if (newWorld) {
